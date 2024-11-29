@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dracula Start Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="center-container">
+	<h1 style="text-align:center"><b>Welcome Back!</b></h1>	
+	<h4 style="text-align:center" class="date-time" id="dateTime"></h4>
+	<form action="https://www.google.com/search" method="GET">
+        <input
+	        type="text"
+        	name="q"
+	        class="search-box"
+        	placeholder="Google Search"
+	        autofocus
+        	>
+        </form>
+  </div>
+    <script>
+    function updateDateTime() {
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, "0"); // 月は0始まり
+      const date = String(now.getDate()).padStart(2, "0");
+      const day = days[now.getDay()];
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+
+      // フォーマット
+      const formattedDate = `${year}-${month}-${date}`;
+      const formattedTime = `${hours}:${minutes}:${seconds}`;
+      document.getElementById("dateTime").textContent = `${day} ${formattedTime} | ${formattedDate}`;
+    }
+
+    // 初期表示 & 1秒ごとの更新
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+</body>
+</html>
+
