@@ -56,11 +56,12 @@ code {
 }
 
 .button {
-  background-color: var(--purple);
+  background-color: #44475A;
   color: var(--foreground);
   padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  margin: 1em;
+  border: 2px solid var(--purple);
+  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -76,6 +77,11 @@ code {
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      margin: 1em;
+}
+.sub-container {
+	display: flex;
+	justify-content: center;
 }
 
 .search-box {
@@ -93,4 +99,5 @@ code {
 .search-box::placeholder {
     color: var(--foreground);
     text-align: center; /* placeholder を中央に配置 */
+    padding-bottom: 1cm;
 }
